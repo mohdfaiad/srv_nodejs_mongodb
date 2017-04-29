@@ -7,7 +7,7 @@ const ContractUserSchema = {
     ctr_usr_password: {type: String, required: true},
     ctr_usr_date_birth: {type: Date, required: true},
     ctr_usr_date_registration: {type: Date, default: Date.now(),required: true},
-    ctr_usr_status: {type: String, required: true, enum: ['E', 'D'], value: 'E', uppercase: true} //E: Enable //D: Disable
+    ctr_usr_status: {type: String, required: true, enum: ['E', 'D'], value: 'E', uppercase: true} //E: Enable, D: Disable
 };
 
 const ContractSchema = new mongoose.Schema ({
@@ -19,7 +19,7 @@ const ContractSchema = new mongoose.Schema ({
     ctr_phone1: {type: String, required: true, },
     ctr_data_birth: {type: Date, required: true},
     ctr_data_registration: {type: Date, default: Date.now(), required: true},
-    ctr_status: {type: String, required: true, enum: ['E', 'D'], value: 'E', uppercase: true}, //E: Enable //D: Disable
+    ctr_status: {type: String, required: true, enum: ['E', 'D'], value: 'E', uppercase: true}, //E: Enable, D: Disable
     ctr_usr: [ContractUserSchema]
 });
 
