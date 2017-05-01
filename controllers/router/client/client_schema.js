@@ -19,28 +19,13 @@ router.post('/client', function (req, res) {
 
 router.get('/client', function (req, res) {
 
-    Schema.find({}, function (err, clients) {
+    Schema.find({
+
+    }, function (err, clients) {
 
         if (err) return res.status(500).send(err);
         res.status(200).send(clients);
     });
-});
-
-router.get('/client/user/:username/:password', function (req, res) {
-
-    Schema.find(
-
-        {
-            'cli_usr.cli_usr_password': req.params.password,
-            'cli_usr.cli_usr_username': req.params.username
-
-        }, function (err, users) {
-
-            if (err) return res.status(500).send(err);
-            res.status(200).send(users);
-
-            console.log(users)
-        });
 });
 
 module.exports = router;

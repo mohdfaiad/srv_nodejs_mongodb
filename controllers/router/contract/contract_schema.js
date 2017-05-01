@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
-const Schema = require('../../models/dao/contract/contract_schema');
+const Schema = require('../../../models/dao/contract/contract_schema');
 
 router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
