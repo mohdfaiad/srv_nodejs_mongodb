@@ -1,13 +1,21 @@
+const file = require('fs');
 const app = require('../../../app');
 const serverCors = require('./cors');
-const port = process.env.PORT || 9080;
 
- module.exports = function (app) {
 
-     app.listen(port, function () {
+module.exports = function (app) {
 
-         console.log('Server listening on port: ' + port)
-     });
+    file.readFile('././data/srv_nodejs', (err, data) => {
 
-     app.use(serverCors);
- };
+        if (err) throw err;
+
+        const port = process.env.PORT || parseInt(data);
+
+        app.listen(port, function () {
+
+            console.log('Server listening : ' + port)
+        });
+
+        app.use(serverCors);
+    });
+};

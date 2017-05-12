@@ -1,7 +1,12 @@
+const file = require('fs');
 const mongoose = require('mongoose');
-const url = 'mongodb://54.233.82.242:27017/cloud_database';
 
-mongoose.connect(url, function () {
+file.readFile('././data/srv_mongodb', (err, data) => {
 
-    console.log('Server database on: ' + url)
+    if (err) throw err;
+
+    mongoose.connect(data, function () {
+
+        console.log('Server MongoDB   : ' + data)
+    });
 });
