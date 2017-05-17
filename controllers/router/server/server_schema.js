@@ -6,6 +6,15 @@ const Schema = require('../../../models/dao/server/server_schema');
 router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
 
+router.get('/server', function (req, res) {
+
+    Schema.find(function (err, servers) {
+
+        if (err) return res.status(500).send(err);
+        res.status(200).send(servers);
+    });
+});
+
 router.post('/server', function (req, res) {
 
     const server = new Schema(req.body);
@@ -17,13 +26,27 @@ router.post('/server', function (req, res) {
     });
 });
 
-router.get('/server', function (req, res) {
+router.put('/server/:server_id', function (req, res) {
 
-    Schema.find(function (err, servers) {
+    Schema.findById(req.params.server_id, function (err, server) {
 
-        if (err) return res.status(500).send(err);
-        res.status(200).send(servers);
-    });
+            server.save(function (err) {
+
+                if (err) return res.status(500).send(err);
+                res.status(200).send(server);
+            })
+        }
+    );
+});
+
+router.delete('/server/:server_id', function (req, res) {
+
+    Schema.remove({_id: req.params.server_id}, function (err, server) {
+
+            if (err) return res.status(500).send(err);
+            res.status(200).send(server);
+        }
+    );
 });
 
 module.exports = router;

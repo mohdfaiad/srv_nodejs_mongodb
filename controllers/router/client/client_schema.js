@@ -6,6 +6,15 @@ const Schema = require('../../../models/dao/client/client_schema');
 router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
 
+router.get('/client', function (req, res) {
+
+    Schema.find({}, function (err, clients) {
+
+        if (err) return res.status(500).send(err);
+        res.status(200).send(clients);
+    });
+});
+
 router.post('/client', function (req, res) {
 
     const client = new Schema(req.body);
@@ -17,15 +26,27 @@ router.post('/client', function (req, res) {
     });
 });
 
-router.get('/client', function (req, res) {
+router.put('/client/:client_id', function (req, res) {
 
-    Schema.find({
+    Schema.findById(req.params.client_id, function (err, client) {
 
-    }, function (err, clients) {
+            client.save(function (err) {
 
-        if (err) return res.status(500).send(err);
-        res.status(200).send(clients);
-    });
+                if (err) return res.status(500).send(err);
+                res.status(200).send(client);
+            })
+        }
+    );
+});
+
+router.delete('/client/:client_id', function (req, res) {
+
+    Schema.remove({_id: req.params.client_id}, function (err, client) {
+
+            if (err) return res.status(500).send(err);
+            res.status(200).send(client);
+        }
+    );
 });
 
 module.exports = router;

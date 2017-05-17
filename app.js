@@ -10,6 +10,7 @@ const ClientUser = require('./controllers/router/client/client_user');
 const ServerSchema = require('./controllers/router/server/server_schema');
 const DesktopCloudSchema = require('./controllers/router/desktopcloud/desktopcloud_schema');
 const ExamSchema = require('./controllers/router/exam/exam_schema');
+const EnterpriseSchema = require('./controllers/router/enterprise/enterprise_schema');
 
 //Pages EJS
 require('./controllers/views/home/index')(app);
@@ -23,5 +24,6 @@ app.use('/api', ServerSchema);
 app.use('/api', DesktopCloudSchema);
 app.use('/api', ClientUser);
 app.use('/api', ExamSchema);
+app.use('/api', EnterpriseSchema);
 
 module.exports = app;
