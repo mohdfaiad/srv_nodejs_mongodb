@@ -1,5 +1,5 @@
 // const file = require('fs');
-const app = require('../../../app');
+const app = require('../../../index');
 const serverCors = require('./cors');
 
 

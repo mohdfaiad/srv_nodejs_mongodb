@@ -12,6 +12,6 @@ const DesktopCloudSchema = new mongoose.Schema ({
     dsk_status: {type: String, required: true, enum: ['E', 'D'], default: 'E', uppercase: true} //E: Enable, D: Disable
 });
 
-mongoose.model('desktopcloud', DesktopCloudSchema);
+mongoose.model('dskcloud', DesktopCloudSchema);
 
-module.exports = mongoose.model('desktopcloud');
+module.exports = mongoose.model('dskcloud');

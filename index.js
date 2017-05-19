@@ -4,13 +4,13 @@ const base = require('./controllers/config/database/base');
 const server = require('./controllers/config/server/server')(app);
 
 //Routes
-const ContractSchema = require('./controllers/router/contract/contract_schema');
-const ClientSchema = require('./controllers/router/client/client_schema');
+const ContractSchema = require('./controllers/router/contract/contract');
+const ClientSchema = require('./controllers/router/client/client');
 const ClientUser = require('./controllers/router/client/client_user');
-const ServerSchema = require('./controllers/router/server/server_schema');
-const DesktopCloudSchema = require('./controllers/router/desktopcloud/desktopcloud_schema');
-const ExamSchema = require('./controllers/router/exam/exam_schema');
-const EnterpriseSchema = require('./controllers/router/enterprise/enterprise_schema');
+const ServerSchema = require('./controllers/router/server/server');
+const DesktopCloudSchema = require('./controllers/router/dskcloud/dskcloud');
+const ExamSchema = require('./controllers/router/exam/exam');
+const EnterpriseSchema = require('./controllers/router/enterprise/enterprise');
 
 //Pages EJS
 require('./controllers/views/home/index')(app);

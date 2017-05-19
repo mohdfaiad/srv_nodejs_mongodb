@@ -1,1 +1,1 @@
-mongodb://10.211.55.11:27017/cloud_database
+mongodb://localhost:27017/cloud_database
