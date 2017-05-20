@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
-
 const DesktopCloudSchema = new mongoose.Schema ({
-
     dsk_cli_usr_id: {type: Object, required: true},
     dsk_contract_id: {type: Object, required: true},
     dsk_username: {type: String, required: true, uppercase: true},
@@ -13,5 +11,4 @@ const DesktopCloudSchema = new mongoose.Schema ({
 });
 
 mongoose.model('dskcloud', DesktopCloudSchema);
-
 module.exports = mongoose.model('dskcloud');
