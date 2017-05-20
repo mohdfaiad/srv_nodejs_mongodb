@@ -46,4 +46,12 @@ router.delete('/client/:client_id', function (req, res) {
     });
 });
 
+router.get('/client/count', function (req, res) {
+    Schema.find().count({}, function (err, client) {
+        if (err)
+            return res.status(500).send(err);
+        res.status(200).send({client});
+    });
+});
+
 module.exports = router;
