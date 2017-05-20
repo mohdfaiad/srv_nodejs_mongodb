@@ -7,10 +7,10 @@ router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
 
 router.get('/client', function (req, res) {
-    Schema.find({}, function (err, clients) {
+    Schema.find({}, function (err, client) {
         if (err)
             return res.status(500).send(err);
-        res.status(200).send(clients);
+        res.status(200).send(client);
     });
 });
 
