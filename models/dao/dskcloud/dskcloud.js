@@ -10,5 +10,6 @@ const DesktopCloudSchema = new mongoose.Schema ({
     dsk_status: {type: String, required: true, enum: ['E', 'D'], default: 'E', uppercase: true},
     dsk_data_registration: {type: Date, default: Date.now(), required: true}
 });
+
 mongoose.model('dskcloud', DesktopCloudSchema);
 module.exports = mongoose.model('dskcloud');

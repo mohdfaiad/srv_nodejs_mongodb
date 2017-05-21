@@ -48,5 +48,3 @@ router.get('/dskcloud/count', function (req, res) {
 });
 
 module.exports = router;
-
-module.exports = router;
