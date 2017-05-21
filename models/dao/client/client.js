@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const ClientUserSchema = {
     cli_usr_name: {type: String, required: true, uppercase: true},
     cli_usr_username: {type: String, required: true, lowercase: true},

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const ExamSchema = new mongoose.Schema ({
     exm_contract_id: {type: Object, required: true},
     exm_name: {type: String, required: true, uppercase: true},

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const ServerSchema = new mongoose.Schema ({
     srv_contract_id: {type: Object, required: true},
     srv_name: {type: String, required: true, uppercase: true},

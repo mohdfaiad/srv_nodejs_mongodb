@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const ContractUserSchema = {
     ctr_usr_name: {type: String, required: true, uppercase: true},
     ctr_usr_username: {type: String, required: true, lowercase: true},

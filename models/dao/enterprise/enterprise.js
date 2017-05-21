@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const EnterpriseSchema = new mongoose.Schema ({
     ent_contract_id: {type: Object, required: true},
     ent_full_name: {type: String, required: true, uppercase: true},
