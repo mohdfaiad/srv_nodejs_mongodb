@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const DesktopCloudSchema = new mongoose.Schema ({
-    dsk_cli_usr_id: {type: Object, required: true},
     dsk_contract_id: {type: Object, required: true},
+    dsk_cli_usr_username: {type: String, required: true, lowercase: true},
     dsk_username: {type: String, required: true, lowercase: true},
     dsk_password: {type: String, required: true},
     dsk_address: {type: String, required: true, lowercase: true},
