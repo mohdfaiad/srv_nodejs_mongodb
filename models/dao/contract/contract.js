@@ -14,7 +14,7 @@ const ContractSchema = new mongoose.Schema ({
     ctr_last_name: {type: String, required: true, uppercase: true},
     ctr_full_name: {type: String, required: true, uppercase: true},
     ctr_email: {type: String, required: true, lowercase: true},
-    ctr_phone1: {type: String, required: true, },
+    ctr_phone1: {type: String, required: true},
     ctr_data_birth: {type: Date, required: true},
     ctr_status: {type: String, required: true, enum: ['E', 'D'], value: 'E', uppercase: true},
     ctr_data_registration: {type: Date, default: Date.now(), required: true},

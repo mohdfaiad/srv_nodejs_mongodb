@@ -1,10 +1,8 @@
-const file = require('fs');
+// const file = require('fs');
+const base = require('./base_address');
+const base_address = base.database;
 const mongoose = require('mongoose');
 
-file.readFile('././data/srv_mongodb', (err, data) => {
-    if (err)
-        throw err;
-    mongoose.connect(data, function () {
-        console.log('Server MongoDB   : ' + data)
-    });
+mongoose.connect(base_address, function () {
+    console.log('Server MongoDB   : ' + base_address)
 });
